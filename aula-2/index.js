@@ -14,15 +14,14 @@ function trianguloRetangulo(a,b){
   return a + b + hipotenusa(a,b);
 }
 
-function meuSanduiche(ingrediente1, ingrediente2){
-   let frase = "estou comendo um sanduiche com " + ingrediente1 + " e " + ingrediente2;
+ const callback = (ing1,ing2) => console.log("terminei meu lanche");
 
-   function callback(){
-     return "Terminei de comer o meu sanduiche";
-   }
-
-   return frase + "\n" + callback();
+ const montaSanduiche = (ing1, ing2, callback) => {
+   console.log("estou comendo meuSanduiche de: " + " " + ing1 + " e " + ing2);
+   callback(ing1,ing2);
  }
+
+ console.log(montaSanduiche("presunto","queijo",callback));
 
 function geraArray(){
   let arr = [];
@@ -47,5 +46,3 @@ function map(){
     console.log(Math.sqrt(valor));
   })
 }
-
-console.log(map());
