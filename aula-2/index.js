@@ -21,8 +21,6 @@ function trianguloRetangulo(a,b){
    callback(ing1,ing2);
  }
 
- console.log(montaSanduiche("presunto","queijo",callback));
-
 function geraArray(){
   let arr = [];
   for(let i = 1; i < 21; i++ ){
@@ -46,3 +44,59 @@ function map(){
     console.log(Math.sqrt(valor));
   })
 }
+
+/*
+Criar um objeto chamado pessoa que tenha as seguintes propriedades com valores
+predefinidos.
+a. idade (number)
+b. nome (string)
+c. sobrenome (string)
+d. sexo (string)
+e. estado civil (string)
+f. filmes preferidos (array de strings)
+*/
+
+// let pessoa = new Object();
+// pessoa.idade = 36;
+// pessoa.nome = "Adalberto";
+// pessoa.sobrenome = "Silva";
+// pessoa.sex = "M";
+// pessoa.estadoCivil = "casado";
+// pessoa.filmes = ["predador","os vingadores","pulp fiction","carga explosiva"];
+// pessoa.comer(comida){
+//   return "estou comento " + comida;
+// }
+
+let pessoa = {
+  idade: 36,
+  nome: "Adalberto",
+  sobrenome: "Silva",
+  sex: "M",
+  estadoCivil: "casado",
+  filmes:["predador","os vingadores","pulp fiction","carga explosiva"],
+  comer: function(comida) {
+    console.log("estou comendo " + comida );
+  }
+}
+
+function ficaMaisVelho(){
+  pessoa["idade"] = pessoa["idade"] + 1;
+}
+
+function prop(){
+  console.log(pessoa["idade"]);
+  console.log(pessoa["nome"]);
+  console.log(pessoa["sobrenome"]);
+  console.log(pessoa["sex"]);
+  console.log(pessoa["estadoCivil"]);
+  console.log(pessoa["filmes"]);
+}
+
+prop();
+
+function comprimenta(){
+  console.log("olá " + pessoa["nome"] + " " + pessoa["sobrenome"]);
+}
+
+comprimenta();
+pessoa.comer("macarrão");
