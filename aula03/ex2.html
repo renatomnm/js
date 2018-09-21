@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      let qde = prompt("insira a quantidade de elementos no array");
+      let arr = [];
+      for(let i = 0; i < qde; i++){
+        let elemento = prompt("insira o elemento " + (i+1));
+        arr.push(elemento);
+      }
+      arr.sort();
+      arr.forEach(function(elem){
+        document.write(elem + " ");
+      });
+    </script>
+  </body>
+</html>
