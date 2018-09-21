@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+        function a(callback){
+          setTimeout( function(){
+            console.log("o acesso foi negado");
+            callback();
+          }, 3000 );
+        }
+
+    function callback(){
+      window.location.href = "home.html";
+    }
+
+    a(callback);
+    </script>
+  </body>
+</html>

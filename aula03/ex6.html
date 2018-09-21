@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+    function redirect(link){
+      setTimeout( function(){
+        window.location.href = link;
+      }, 5000);
+    }
+
+      function question(pergunta){
+        pergunta = confirm("você usa a rede social para trabalhar?");
+        if(pergunta){
+          redirect("https://br.linkedin.com/",5000);
+        } else {
+            pergunta = confirm("você quer apenas ver fotos?");
+            if(pergunta){
+              redirect("https://www.instagram.com/?hl=pt-br",5000);
+            } else {
+              pergunta = confirm("você quer ver mensagens curtidas?");
+              if(pergunta){
+                redirect("https://twitter.com/",5000);
+              } else {
+              redirect("https://facebook.com/",5000);
+              }
+          }
+      }
+    }
+
+      question();
+    </script>
+  </body>
+</html>
