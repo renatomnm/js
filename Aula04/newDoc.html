@@ -7,9 +7,11 @@
   <body>
     <header class = "cabecalho">
       <h1>Meus Contatos</h1>
-      <a href="https://pt-br.facebook.com/" id="facebook">Facebook</a>
-      <a href="https://www.instagram.com/?hl=pt-br" id="instagram">Instagram</a>
-      <a href="https://twitter.com/" id="twitter">Twitter</a>
+      <div id="social">
+        <a href="https://pt-br.facebook.com/" id="facebook" class="redesocial">Facebook</a>
+        <a href="https://www.instagram.com/?hl=pt-br" id="instagram" class="redesocial">Instagram</a>
+        <a href="https://twitter.com/" id="twitter" class="redesocial">Twitter</a>
+      </div>
     </header>
     <div class="forms">
       <form class="formulario" action="action.html" method="post">
@@ -36,6 +38,15 @@
       const novoParagrafo = document.createTextNode('Digital House');
       novoItem.appendChild(novoParagrafo)
       container.appendChild(novoItem)
+
+      <!-- Remover os links das redes sociais -->
+      const redes = document.querySelector("#social");
+      const selectAll = document.querySelectorAll(".redesocial");
+      console.log(redes);
+      selectAll.forEach((rs) => redes.removeChild(rs));
+
+      const titulo = document.querySelector("h1");
+      titulo.innerHTML = "Digital House, a escola de programação";
     </script>
   </body>
 </html>
