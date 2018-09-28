@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Formularios</title>
+    <style>
+      label{
+        display: block;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <fieldset>
+      <form class="formulario">
+        <label for="nome">
+          Nome:
+          <input type="text" name="nome" class="campo_nome" value="" placeholder="Renato Minami">
+        </label>
+        <label for="email">
+          Email:
+          <input type="text" name="nome" class="campo_email" value="" placeholder="renatomin@dh.com">
+        </label>
+        <label for="sexo">
+          Sexo:
+          <input type="radio" name="sexo" class="sexo" value="Masculino"> Masculino
+          <input type="radio" name="sexo" class="sexo" value="Feminino"> Feminino
+          <input type="radio" name="sexo" class="sexo" value="?"> ?
+        </label>
+        <label for="senha">
+          Senha:
+          <input type="password" name="senha" class="campo_senha" placeholder="****">
+        </label>
+        <input type="submit" name="enviar" value="Enviar"></input>
+      </form>
+
+      <script type="text/javascript">
+
+        function validaCampo(campo){
+          return campo.length > 0;
+        }
+
+        const formulario = document.querySelector(".formulario");
+
+        formulario.addEventListener('submit',(e) => {
+          const nome = document.querySelector(".campo_nome");
+          const email = document.querySelector(".campo_email");
+          const sexo = document.querySelector(".sexo:checked");
+          const senha = document.querySelector(".campo_senha");
+          console.log(nome)
+
+          if(!validaCampo(nome.value)){
+            alert("preencha o campo nome!")
+            return false
+          }
+
+          if(!validaCampo(email.value)){
+            alert("preencha o campo email!")
+            return false
+          }
+
+          if(!validaCampo(sexo.value)){
+            alert("preencha o sexo!")
+            return false
+          }
+
+          if(!validaCampo(senha.value)){
+            alert("preencha o campo senha!")
+            return false
+          }
+
+          // !validaCampo(email.value) ? alert("preencha o campo email!") : false
+          // !validaCampo(sexo.value) ? alert("preencha o sexo") : false
+          // !validaCampo(senha.value) ? alert("preencha a senha!") : false
+
+          alert("Formulario OK");
+        })
+
+
+
+
+      </script>
+
+    </fieldset>
+  </body>
+</html>
