@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Aula 05</title>
+  </head>
+  <body>
+    <button type="submit" name="enviar" class="button_class">Enviar</button>
+    <p class="parag">Clique numero 0</p>
+    <script type="text/javascript">
+
+      function gera_cor(){
+          let hexadecimais = '0123456789ABCDEF';
+          let cor = '#';
+          for (var i = 0; i < 6; i++ ) {
+              cor += hexadecimais[Math.floor(Math.random() * 16)];
+          }
+          return cor;
+      }
+
+      function alterna_cor(){
+        let body = document.querySelector('body');
+        let cor = body.style.background;
+        if(cor == 'red'){
+          cor = 'blue';
+        } else {
+          cor = 'red';
+        }
+        return cor;
+      }
+
+      const button = document.querySelector('.button_class')
+      button.addEventListener('click', function() {
+        alert("você clicou no botão");
+        this.style.background = alterna_cor();
+      })
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercicio 2</title>
+    <style type="text/css">
+      button{
+        display: inline-block;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="button">
+        <button type="button" name="Comprimentar" class="Comprimentar">Comprimentar</button>
+    </div>
+    <div class="button">
+        <button type="button" name="Alterar fundo" class="AlterarFundo">Alterar Fundo</button>
+    </div>
+    <div class="button">
+        <button type="button" name="Remover Listener" class="RemoveListener">Remover Listener</button>
+    </div>
+    <div class="imagem_div">
+        <img src="download.jpg" alt="colors" class="imagem">
+    </div>
+    <p class="desc">Imagem Colorida</p>
+
+    <script type="text/javascript">
+
+      const buttonComprimentar = document.querySelector(".Comprimentar");
+      buttonComprimentar.addEventListener('click',function(){
+        alert("Olá");
+      })
+
+      const buttonAlterarFundo = document.querySelector(".AlterarFundo");
+      buttonAlterarFundo.addEventListener('click',function(){
+        if(document.body.style.background == 'green'){
+          document.body.style.background = 'white';
+        } else {
+          document.body.style.background = 'green';
+        }
+      })
+
+      const img = document.querySelector(".imagem");
+        img.addEventListener('mouseover',function(){
+          const parag = document.querySelector(".desc")
+          parag.innerHTML = "<p>Estou clicando na imagem<p>";
+       })
+
+       document.body.addEventListener('click',function(){
+         this.style.background = "red";
+       })
+
+       const remove = document.querySelector(".RemoveListener")
+       remove.addEventListener('click',function(){
+         document.body.removeEventListener('click',function(){
+           alert("Listener removidos");
+         })
+       })
+
+    </script>
+  </body>
+</html>
