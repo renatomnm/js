@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Formulario sem refresh</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#ajax_form').submit(function(e){
+          e.preventDefault();
+
+          let dados = jQuery(this).serialize();
+
+          $("[type=submit]",this).each(function(){
+            dados += "&" + escape($(this).attr("name")) + "=" + escape($(this).val())
+          })
+
+          $.ajax({
+            type:"POST",
+            url:"processa.php",
+            data: dados,
+            success: function(data)
+            {
+              alert(data);
+            }
+          })
+          return false;
+        })
+      })
+    </script>
+
+    <!-- Formulario -->
+
+    <form class="" id="ajax_form" method="post">
+      <label for="nome">Nome: </label>
+      <input type="text" name="nome" value="">
+
+      <label for="usuario">Usuario: </label>
+      <input type="text" name="usuario" value="">
+
+      <label for="senha">Senha: </label>
+      <input type="text" name="senha" value="">
+
+      <input type="submit" name="enviar" value="Enviar">
+    </form>
+  </body>
+</html>
