@@ -41,22 +41,22 @@
         }
       })
 
+      const event = function(){
+        document.body.style.background = "red";
+      }
+
       const img = document.querySelector(".imagem");
         img.addEventListener('mouseover',function(){
           const parag = document.querySelector(".desc")
           parag.innerHTML = "<p>Estou clicando na imagem<p>";
        })
 
-       document.body.addEventListener('click',function(){
-         this.style.background = "red";
-       })
+       document.body.addEventListener("click", event);
 
-       const remove = document.querySelector(".RemoveListener")
-       remove.addEventListener('click',function(){
-         document.body.removeEventListener('click',function(){
-           alert("Listener removidos");
-         })
-       })
+       const remove = document.querySelector(".RemoveListener");
+       remove.addEventListener("click",function(){
+         document.body.removeEventListener("click",event);
+       });
 
     </script>
   </body>
